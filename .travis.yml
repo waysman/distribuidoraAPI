@@ -1,0 +1,22 @@
+bundler_args: --without production
+before_script: bundle exec rails db:create db:migrate
+cache: bundler
+language: ruby
+rvm:
+  - 2.4.0
+sript:
+  - bundle exec rspec
+sudo: false
+dist: xenial
+branch:
+  only:
+    - master
+
+deploy:
+  provider: heroku
+  api_key:
+    secure: "7548d1f2-5136-425a-b29f-f93492c5352b"
+  app:
+    master: distribuidoraAPI
+  run:
+    - "rake db:migrate"
