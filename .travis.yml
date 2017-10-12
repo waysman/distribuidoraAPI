@@ -17,6 +17,6 @@ deploy:
   api_key:
     secure: "7548d1f2-5136-425a-b29f-f93492c5352b"
   app:
-    master: distribuidoraAPI
+    master: distribuidoraapi
   run:
     - "rake db:migrate"
